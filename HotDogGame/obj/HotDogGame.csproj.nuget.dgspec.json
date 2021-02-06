@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\treec\\source\\repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj": {}
+    "C:\\Users\\treec\\Source\\Repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\treec\\source\\repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj": {
+    "C:\\Users\\treec\\Source\\Repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\treec\\source\\repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj",
+        "projectUniqueName": "C:\\Users\\treec\\Source\\Repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj",
         "projectName": "HotDogGame",
-        "projectPath": "C:\\Users\\treec\\source\\repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj",
+        "projectPath": "C:\\Users\\treec\\Source\\Repos\\HotDogGame\\HotDogGame\\HotDogGame.csproj",
         "packagesPath": "C:\\Users\\treec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\treec\\source\\repos\\HotDogGame\\HotDogGame\\obj\\",
+        "outputPath": "C:\\Users\\treec\\Source\\Repos\\HotDogGame\\HotDogGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

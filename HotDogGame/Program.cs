@@ -7,7 +7,7 @@ namespace HotDogGame
         [STAThread]
         static void Main()
         {
-            using (var game = new HotDogGame())
+            using (var game = new BallVoidGame())
                 game.Run();
         }
     }
