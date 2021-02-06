@@ -26,34 +26,38 @@ namespace HotDogGame
         public BoundingCircle Circle => circle;
 
         public Color color { get; set; } = Color.White;
-
+        /// <summary>
+        /// Rainbox Void image is loaded in
+        /// </summary>
+        /// <param name="content"></param>
         public void LoadContent(ContentManager content)
         {
             texture = content.Load<Texture2D>("RainbowBall");
         }
-
+        /// <summary>
+        /// Sprites update method used to reframe hitbox and adjust position according to input
+        /// </summary>
+        /// <param name="gameTime"></param>
+        /// <param name="sc"></param>
         public void Update(GameTime gameTime, double sc)
         {
             gamePadState = GamePad.GetState(0);
             keyboardState = Keyboard.GetState();
 
-            // Apply the gamepad movement with inverted Y axis
+            
             position += gamePadState.ThumbSticks.Left * new Vector2(1, -1);
-           // if (gamePadState.ThumbSticks.Left.X < 0) flipped = true;
-           // if (gamePadState.ThumbSticks.Left.X > 0) flipped = false;
-
-            // Apply keyboard movement
+           
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W)) position += new Vector2(0, -1);
             if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S)) position += new Vector2(0, 1);
             if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
             {
                 position += new Vector2(-1, 0);
-                //flipped = true;
+                
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
                 position += new Vector2(1, 0);
-                //flipped = false;
+               
             }
             circle.Center = position - new Vector2(-13,-13);
             

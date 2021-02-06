@@ -18,6 +18,9 @@ namespace HotDogGame
         private Texture2D basketball;
         private int ballCount = 7;
 
+        /// <summary>
+        /// Constructs game window
+        /// </summary>
         public BallVoidGame()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -25,6 +28,9 @@ namespace HotDogGame
             IsMouseVisible = true;
         }
 
+        /// <summary>
+        /// Initializes all of the forefront sprites
+        /// </summary>
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -43,7 +49,9 @@ namespace HotDogGame
            if(ballCount != 0)  voidSprite = new VoidSprite();
             base.Initialize();
         }
-
+        /// <summary>
+        /// Using a content manager all sprites load in their corresponding images
+        /// </summary>
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -51,11 +59,13 @@ namespace HotDogGame
             voidSprite.LoadContent(Content);
             basketball = Content.Load<Texture2D>("basketball");
             
-            //spriteFont = Content.Load<SpriteFont>("arial");
-
-            // TODO: use this.Content to load your game content here
+            
         }
 
+        /// <summary>
+        /// Update method continuously calls on Sprite's update methods to handle input within the game
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -82,7 +92,10 @@ namespace HotDogGame
             }
             base.Update(gameTime);
         }
-
+        /// <summary>
+        /// Continuously draws content that coexists with its counterparting inputted values
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -96,17 +109,8 @@ namespace HotDogGame
                 if (ball.Hit)
                 {
                     scale += (float).05;
-                    
-                    
                 }
             }
-
-            var rectG = new Rectangle((int)(voidSprite.Circle.Center.X - voidSprite.Circle.Radius),
-                                          (int)(voidSprite.Circle.Center.Y - voidSprite.Circle.Radius),
-                                          (int)(2 * voidSprite.Circle.Radius), (int)(2 * voidSprite.Circle.Radius));
-            _spriteBatch.Draw(basketball, rectG, Color.White);
-
-
             voidSprite.Draw(gameTime, _spriteBatch,scale);
             voidSprite.Update(gameTime,0);
             s--;
